@@ -65,10 +65,9 @@ function Home() {
   const [, setSearchParams] = useSearchParams();
 
   const handleAccordionItemClick = (label: string) => {
-    const params = new URLSearchParams();
-
-    params.set("item", label.toLowerCase());
-    setSearchParams(params);
+    // const params = new URLSearchParams();
+    // params.set("item", label.toLowerCase());
+    // setSearchParams(params);
   };
 
   return (

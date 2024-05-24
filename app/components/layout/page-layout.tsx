@@ -3,8 +3,12 @@ import { Button } from "../ui/button";
 import { ArrowLeft } from "lucide-react";
 import Footer from "../home/footer";
 import { useNavigate } from "@remix-run/react";
+import { cn } from "~/lib/utils";
 
-function PageLayout({ children }: PropsWithChildren) {
+function PageLayout({
+  children,
+  noFooter = false,
+}: PropsWithChildren<{ noFooter?: boolean }>) {
   const navigate = useNavigate();
   return (
     <div className="container min-h-dvh flex flex-col">
@@ -16,10 +20,12 @@ function PageLayout({ children }: PropsWithChildren) {
           <ArrowLeft className="w-6 h-6 md:w-6 md:h-6" />
         </Button>
       </header>
-      <div className="md:px-8 pt-8 md:pt-10 pb-10">{children}</div>
-      <div className="mt-auto">
-        <Footer />
-      </div>
+      <div className={cn("md:px-8 pt-8 md:pt-10 pb-10")}>{children}</div>
+      {!noFooter && (
+        <div className="mt-auto">
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }
