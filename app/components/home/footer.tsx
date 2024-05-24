@@ -10,7 +10,7 @@ const MenuItems: MenuItem[] = [
   {
     href: "/blog",
     label: "Blog",
-    icon: <ArrowUpRight className="w-4 h-4" />,
+    icon: <ArrowUpRight className="w-4 h-4 text-white" />,
   },
   {
     href: "/join-us",

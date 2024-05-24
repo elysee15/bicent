@@ -23,7 +23,7 @@ function InputField({ name, label, ...rest }: FormInputProps) {
         aria-errormessage={error}
       />
       {error && (
-        <p role="alert" className="text-xs text-destructive">
+        <p role="alert" className="text-xs text-destructive mt-1">
           {error ? error : null}
         </p>
       )}

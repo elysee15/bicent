@@ -21,6 +21,7 @@ const config = {
       fontFamily: {
         sans: ["Poppins", "system-ui"],
         poppins: ["Poppins", "system-ui"],
+        graphik: ["Graphik", "Poppins", "system-ui"],
       },
       fontSize: {
         // 1rem = 16px

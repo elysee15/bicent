@@ -5,7 +5,13 @@ import InputField from "../form/input";
 import SubmitButton from "../form/submit-button";
 import TextAreaField from "../form/textarea";
 
-const validator = withZod(z.object({}));
+const validator = withZod(
+  z.object({
+    email: z.string().min(1, "Email is required").email(),
+    expertise: z.string().min(1, "Expertise required"),
+    fullname: z.string().min(1, "Fullname is required"),
+  })
+);
 
 function JoinUsForm() {
   return (

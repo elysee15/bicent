@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "../ui/accordion";
+import HeroText from "./hero-text";
 import { cn } from "~/lib/utils";
 
 const ACCORDION_ITEMS = [
@@ -30,12 +31,12 @@ function Home() {
   return (
     <div className="min-h-dvh bg-background flex flex-col">
       <HomeHeader />
-      <div className="container flex grow w-full border pt-8">
-        <div className="flex w-full justify-end">
-          {/* <section className="lg:w-3/5">
+      <div className="container grow flex w-full pt-8">
+        <div className="flex w-full">
+          <section className="lg:w-3/5 flex items-center">
             <HeroText />
-          </section> */}
-          <section className="lg:w-full lg:max-w-[400px] font-sans text-lg">
+          </section>
+          <section className="lg:w-full lg:max-w-[400px] font-sans text-lg flex items-start pt-14 justify-end md:ml-auto">
             <Accordion
               type="single"
               collapsible
@@ -45,9 +46,12 @@ function Home() {
                 <AccordionItem
                   value={`${item.label}-${idx}`}
                   key={item.label}
-                  className={cn("px-6 py-3", {
-                    "border-none": idx === ACCORDION_ITEMS.length - 1,
-                  })}
+                  className={cn(
+                    "px-6 py-3 border-none relative after:absolute after:content-['\0a0'] after:inline-block after:h-[1px] after:bottom-0 after:w-[88%] after:mx-auto after:bg-[#BBC3C31A]/10 after:-translate-x-1/2 after:left-1/2",
+                    {
+                      "after:h-0": idx === ACCORDION_ITEMS.length - 1,
+                    }
+                  )}
                 >
                   <AccordionTrigger>{item.label}</AccordionTrigger>
                   <AccordionContent>
@@ -59,8 +63,9 @@ function Home() {
           </section>
         </div>
       </div>
-
-      <Footer />
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </div>
   );
 }

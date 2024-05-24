@@ -24,7 +24,7 @@ function TextAreaField({ name, label, ...rest }: FormInputProps) {
       />
 
       {error && (
-        <p role="alert" className="text-xs text-destructive">
+        <p role="alert" className="text-xs text-destructive mt-1">
           {error ? error : null}
         </p>
       )}
