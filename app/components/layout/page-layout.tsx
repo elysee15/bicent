@@ -8,7 +8,8 @@ import { cn } from "~/lib/utils";
 function PageLayout({
   children,
   noFooter = false,
-}: PropsWithChildren<{ noFooter?: boolean }>) {
+  className,
+}: PropsWithChildren<{ noFooter?: boolean; className?: string }>) {
   const navigate = useNavigate();
   return (
     <div className="container min-h-dvh flex flex-col">
@@ -20,7 +21,9 @@ function PageLayout({
           <ArrowLeft className="w-6 h-6 md:w-6 md:h-6" />
         </Button>
       </header>
-      <div className={cn("md:px-8 pt-8 md:pt-10 pb-10")}>{children}</div>
+      <div className={cn("md:px-8 pt-8 md:pt-10 pb-10", className)}>
+        {children}
+      </div>
       {!noFooter && (
         <div className="mt-auto">
           <Footer />
