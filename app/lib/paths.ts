@@ -4,5 +4,5 @@ export const PATHS = {
   ourDefinition: "/our-definition",
   ourPartners: "/our-partners",
   accelerators: "/accelerators",
-  whatsNews: "/what-news",
+  whatsNext: "/what-next",
 } as const;

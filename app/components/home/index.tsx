@@ -45,7 +45,7 @@ const ACCORDION_ITEMS = [
     label: "What's next ?",
     content: (
       <HomeAccordionContent
-        exploreHref={PATHS.whatsNews}
+        exploreHref={PATHS.whatsNext}
         content="We are building the Century Technologies, for us, each of our solutions represents a revolution and a call for change."
       />
     ),
